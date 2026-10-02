@@ -82,33 +82,35 @@
         }
     </style>
 
-    <!-- 1. GOOGLE ADS GLOBAL SITE TAG -->
-    <!-- Replace AW-XXXXXXXXXX with your actual Google Ads ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+       <script async src="https://www.googletagmanager.com/gtag/js?id=AW-980967459"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'AW-XXXXXXXXXX'); 
+      gtag('config', 'AW-980967459');
     </script>
 
-    <!-- 2. GOOGLE ADS EVENT SNIPPET -->
-    <!-- This function reports the conversion, then redirects to the profile -->
     <script>
       function gtag_report_conversion(url) {
-        var callback = function () {
+        var redirected = false;
+        var go = function () {
+          if (redirected) { return; }
+          redirected = true;
           if (typeof(url) != 'undefined') {
             window.location = url;
           }
         };
+        setTimeout(go, 1000);
         gtag('event', 'conversion', {
-            // Replace AW-XXXXXXXXXX/YYYYYYYYYYYY with your actual Conversion ID and Label
-            'send_to': 'AW-XXXXXXXXXX/YYYYYYYYYYYY',
-            'event_callback': callback
+            'send_to': 'AW-980967459/ZfwxCPbD6I0dEKPA4dMD',
+            'value': 1.0,
+            'currency': 'RON',
+            'event_callback': go
         });
         return false;
       }
-    </script>
+ 
+</script>
 </head>
 <body>
 
